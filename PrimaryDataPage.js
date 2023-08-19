@@ -180,12 +180,28 @@ function PrimaryDataPage(props) {
                               {eachData.publishedAt}
                             </p>
 
-                            <a href={eachData.url}>
-                              {" "}
-                              <button className="know-more-button">
-                                Read More
-                              </button>
-                            </a>
+                            <div style={{ display: "flex" }}>
+                              <div onClick={() => onHandleFavourite(eachData)}>
+                                <FontAwesomeIcon
+                                  icon={faHeart}
+                                  style={{
+                                    color: "rgba(232, 18, 18, 0.963)",
+                                    height: "25px",
+                                    width: "25px",
+                                    marginTop: "10%",
+                                    cursor: "pointer",
+                                  }}
+                                />
+                              </div>
+                              <Link
+                                to="/details"
+                                state={{ eachData: eachData }}
+                              >
+                                <button className="know-more-button">
+                                  Read More
+                                </button>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
